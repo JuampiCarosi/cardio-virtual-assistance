@@ -27,7 +27,9 @@ export default async function Home() {
             </Link>
           </div>
         </div>
-        <CirclesFilled className="absolute -top-10 -left-[70%] z-10 h-auto w-[2800px] overflow-hidden" />
+        <div className="absolute -top-10 left-0 w-full overflow-hidden">
+          <CirclesFilled className="relative -left-[70%] h-auto w-[2800px]" />
+        </div>
       </section>
       <section className="relative z-20 h-[800px]">
         <div className="flex h-full flex-col items-center justify-center gap-25 text-rose-950">
@@ -166,7 +168,7 @@ export default async function Home() {
           />
         </div>
       </section>
-      <section className="relative bg-[#d8c0c0] py-36">
+      <section className="relative overflow-hidden bg-[#d8c0c0] py-36">
         <div className="flex flex-col items-center gap-20">
           <h2 className="text-center text-2xl font-semibold text-rose-900">
             What Service Do We Offer?
@@ -207,16 +209,16 @@ export default async function Home() {
             </div>
           </div>
         </div>
-        <div className="overflow-hidden">
-          <Circles className="absolute top-20 -left-[60%] z-10 h-auto w-[2300px]" />
+        <div className="absolute top-20 left-0 w-full overflow-hidden">
+          <Circles className="relative -left-[60%] h-auto w-[2300px]" />
         </div>
       </section>
       <section id="contact" className="relative z-20 py-20">
         <h2 className="text-center text-2xl font-semibold text-[#891C1C]">
           Work with CardioVirtual Assistance
         </h2>
-        <div className="justiy-center mx-auto mt-16 flex max-w-7xl items-center gap-20 px-8">
-          <div className="w-[500px] rounded-lg bg-[#F8F1F1]/70 p-10">
+        <div className="justiy-center mx-auto mt-16 flex max-w-7xl flex-col items-center gap-20 px-8 sm:flex-row">
+          <div className="w-full max-w-[500px] rounded-lg bg-[#F8F1F1]/70 p-10">
             <h3 className="text-xl font-medium text-gray-900">Contact Us</h3>
             <h4 className="pt-1 pb-3 text-2xl font-medium text-gray-900">
               Get In Touch
