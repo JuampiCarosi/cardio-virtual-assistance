@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "CVA",
-  // icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
 export default function RootLayout({
@@ -41,9 +41,9 @@ export default function RootLayout({
               </Link>
             </div>
             <div className="hidden items-center gap-6 text-lg font-medium text-rose-950 md:flex">
-              <Link href="/#start">start</Link>
-              <Link href="/#what-we-offer">what we offer</Link>
-              <Link href="/#contact">contact</Link>
+              <Link href="#start">start</Link>
+              <Link href="#what-we-offer">what we offer</Link>
+              <Link href="#contact">contact</Link>
             </div>
           </div>
         </nav>
