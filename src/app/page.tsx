@@ -11,7 +11,7 @@ export default async function Home() {
         id="start"
         className="relative h-[900px] overflow-x-clip bg-[url(/bg-main.png)] bg-cover bg-center bg-no-repeat"
       >
-        <div className="absolute bottom-50 left-32 z-20 flex h-full items-end">
+        <div className="sm:absolute sm:bottom-50  sm:left-32 sm:px-0 px-5 z-20 flex h-full items-end">
           <div className="flex flex-col justify-center">
             <h1 className="text-6xl font-semibold text-rose-950">
               cardio virtual assistance
