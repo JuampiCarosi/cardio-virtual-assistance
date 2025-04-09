@@ -66,7 +66,7 @@ export default async function Home() {
         ></section>
         <div className="flex h-full flex-col items-center justify-center gap-25 py-20 text-rose-900">
           <h2 className="text-2xl font-semibold">What We Offer</h2>
-          <div className="grid grid-cols-3 gap-x-30 gap-y-20">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-30 gap-y-20">
             <div className="flex max-w-64 flex-col items-center gap-1 text-center text-rose-950">
               <Image
                 src="/cost-savings.png"
