@@ -11,8 +11,8 @@ import {
   Text,
 } from "@react-email/components";
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
+const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
   : "http://localhost:3000";
 
 console.log(baseUrl);
@@ -32,11 +32,7 @@ export const NewContactEmail = ({ email, message, name, subject }: Contact) => {
         <Container style={container}>
           <Section>
             <Row>
-              <Img
-                src={`${baseUrl}/icon.png`}
-                width="96"
-                alt={`${baseUrl}/icon.png`}
-              />
+              <Img src={`${baseUrl}/icon.png`} width="96" alt="cva logo" />
               <Text style={logoHeading}>Cardio Virtual Assistance</Text>
             </Row>
           </Section>
