@@ -54,31 +54,29 @@ export default function RootLayout({
           </div>
         </nav>
         {children}
-        <footer className="z-40 flex h-[60px] items-center bg-white text-rose-900">
-          <div className="h-full w-full bg-[#E5D5D5] py-3">
-            <div className="mx-auto px-7">
-              <div className="flex items-center justify-between">
-                <p className="text-sm">© 2025 CVA. All rights reserved.</p>
-                <div className="flex flex-col items-start text-sm">
-                  <span>
-                    Designed by{" "}
-                    <Link
-                      className="underline"
-                      href="https://www.linkedin.com/in/sol-carosi-821989207"
-                    >
-                      Sol Carosi
-                    </Link>
-                  </span>
-                  <span>
-                    Created by{" "}
-                    <Link
-                      className="underline"
-                      href="https://www.linkedin.com/in/juan-pablo-carosi-warburg-43667529b/"
-                    >
-                      Juan Pablo Carosi
-                    </Link>
-                  </span>
-                </div>
+        <footer className="z-40 flex items-center bg-white text-rose-900">
+          <div className="h-full w-full bg-[#E5D5D5] px-7 py-3">
+            <div className="flex items-center justify-between">
+              <p className="text-sm">© 2025 CVA. All rights reserved.</p>
+              <div className="flex flex-col items-start text-sm">
+                <span>
+                  Designed by{" "}
+                  <Link
+                    className="underline"
+                    href="https://www.linkedin.com/in/sol-carosi-821989207"
+                  >
+                    Sol Carosi
+                  </Link>
+                </span>
+                <span>
+                  Created by{" "}
+                  <Link
+                    className="underline"
+                    href="https://www.linkedin.com/in/juan-pablo-carosi-warburg-43667529b/"
+                  >
+                    Juan Pablo Carosi
+                  </Link>
+                </span>
               </div>
             </div>
           </div>
