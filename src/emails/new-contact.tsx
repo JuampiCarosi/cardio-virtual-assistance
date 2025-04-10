@@ -35,7 +35,7 @@ export const NewContactEmail = ({ email, message, name, subject }: Contact) => {
               <Img
                 src={`${baseUrl}/icon.png`}
                 width="96"
-                alt="`${baseUrl}/icon.png`"
+                alt={`${baseUrl}/icon.png`}
               />
               <Text style={logoHeading}>Cardio Virtual Assistance</Text>
             </Row>
