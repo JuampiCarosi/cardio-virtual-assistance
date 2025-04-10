@@ -33,21 +33,56 @@ export default function RootLayout({
         <script async src="/scripts/pixel.js" />
       </head>
       <body className="flex min-h-screen flex-col antialiased">
-        <nav className="sticky top-0 z-30 w-full bg-white shadow-md print:hidden">
-          <div className="flex w-full items-center justify-between px-8">
+        <nav className="sticky top-0 z-30 h-[70px] w-full bg-white shadow-md print:hidden">
+          <div className="flex h-full w-full items-center justify-between px-3 sm:px-8">
             <div className="flex items-center gap-3">
               <Link href="/">
                 <Image width={72} height={79} src="/icon.png" alt="CVA logo" />
               </Link>
             </div>
-            <div className="hidden items-center gap-6 text-lg font-medium text-rose-950 md:flex">
-              <Link href="#start">start</Link>
-              <Link href="#what-we-offer">what we offer</Link>
-              <Link href="#contact">contact</Link>
+            <div className="flex items-center gap-5 text-lg font-medium text-rose-950 sm:gap-6">
+              <Link className="hover:underline" href="#start">
+                start
+              </Link>
+              <Link className="hover:underline" href="#what-we-offer">
+                what we offer
+              </Link>
+              <Link className="hover:underline" href="#contact">
+                contact
+              </Link>
             </div>
           </div>
         </nav>
         {children}
+        <footer className="z-40 flex h-[60px] items-center bg-white text-rose-900">
+          <div className="h-full w-full bg-[#E5D5D5] py-3">
+            <div className="mx-auto px-7">
+              <div className="flex items-center justify-between">
+                <p className="text-sm">© 2025 CVA. All rights reserved.</p>
+                <div className="flex flex-col items-start text-sm">
+                  <span>
+                    Designed by{" "}
+                    <Link
+                      className="underline"
+                      href="https://www.linkedin.com/in/sol-carosi-821989207"
+                    >
+                      Sol Carosi
+                    </Link>
+                  </span>
+                  <span>
+                    Created by{" "}
+                    <Link
+                      className="underline"
+                      href="https://www.linkedin.com/in/juan-pablo-carosi-warburg-43667529b/"
+                    >
+                      Juan Pablo Carosi
+                    </Link>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );

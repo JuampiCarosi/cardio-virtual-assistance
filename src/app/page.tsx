@@ -11,7 +11,7 @@ export default async function Home() {
         id="start"
         className="relative h-[900px] overflow-x-clip bg-[url(/bg-main.png)] bg-cover bg-center bg-no-repeat"
       >
-        <div className="sm:absolute sm:bottom-50  sm:left-32 z-20 sm:px-0 px-1 flex h-full sm:items-end items-center">
+        <div className="relative z-20 flex h-full items-center pt-10 pl-2 sm:pt-20 sm:pl-20">
           <div className="flex flex-col justify-center">
             <h1 className="text-6xl font-semibold text-rose-950">
               cardio virtual assistance
@@ -28,11 +28,11 @@ export default async function Home() {
           </div>
         </div>
         <div className="absolute -top-10 left-0 w-full overflow-hidden">
-          <CirclesFilled className="relative -left-[70%] h-auto w-[2800px]" />
+          <CirclesFilled className="relative -top-20 -left-[1000px] h-auto w-[2800px] sm:top-0" />
         </div>
       </section>
       <section className="relative z-20 h-[800px]">
-        <div className="flex h-full flex-col items-center justify-center gap-25 text-rose-950">
+        <div className="flex h-full flex-col items-center justify-center gap-25 px-4 text-rose-950">
           <div className="flex max-w-2xl flex-col items-center gap-3 text-center">
             <h3 className="text-2xl font-medium">Mission</h3>
             <p className="text-lg">
@@ -65,8 +65,8 @@ export default async function Home() {
           className="absolute -mt-10 w-full"
         ></section>
         <div className="flex h-full flex-col items-center justify-center gap-25 py-20 text-rose-900">
-          <h2 className="text-2xl font-semibold">What We Offer</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-30 gap-y-20">
+          <h2 className="px-2 text-2xl font-semibold">What We Offer</h2>
+          <div className="grid grid-cols-2 gap-x-8 gap-y-20 px-2 sm:grid-cols-3 sm:gap-x-30">
             <div className="flex max-w-64 flex-col items-center gap-1 text-center text-rose-950">
               <Image
                 src="/cost-savings.png"
@@ -142,7 +142,7 @@ export default async function Home() {
         </div>
       </section>
       <section className="py-20">
-        <h2 className="text-center text-2xl font-semibold text-rose-900">
+        <h2 className="px-2 text-center text-2xl font-semibold text-rose-900">
           Why Choose CardioVirtual Assistance?
         </h2>
         <div className="mx-auto mt-16 flex max-w-5xl flex-wrap items-center justify-center gap-12 px-8 2xl:max-w-[1540px]">
@@ -168,111 +168,114 @@ export default async function Home() {
           />
         </div>
       </section>
-      <section className="relative overflow-hidden bg-[#d8c0c0] py-36">
-        <div className="flex flex-col items-center gap-20">
-          <h2 className="text-center text-2xl font-semibold text-rose-900">
-            What Service Do We Offer?
+      <div className="relative overflow-hidden">
+        <div className="absolute top-20 left-0 w-full">
+          <Circles className="relative -left-[900px] h-auto w-[2300px]" />
+        </div>
+        <section className="bg-[#d8c0c0] py-36">
+          <div className="flex flex-col items-center gap-20">
+            <h2 className="px-2 text-center text-2xl font-semibold text-rose-900">
+              What Service Do We Offer?
+            </h2>
+
+            <div className="flex flex-col items-center gap-16 px-8">
+              <div className="flex max-w-6xl flex-col items-center gap-3 text-center">
+                <h3 className="text-xl font-semibold text-black">
+                  Comprehensive Assistance
+                </h3>
+                <p className="text-lg text-black">
+                  We provide support to physicians, cardiologists, and medical
+                  institutions to help them achieve better patient outcomes by
+                  enhancing their efficiency and focusing on direct patient
+                  care.
+                </p>
+              </div>
+
+              <div className="flex max-w-6xl flex-col items-center gap-3 text-center">
+                <h3 className="text-xl font-semibold text-black">
+                  Medical Virtual Scribe
+                </h3>
+                <p className="text-lg text-black">
+                  We assist with preliminary cardiology reporting, accurately
+                  documenting medical visits, diagnoses, procedures, and
+                  transcribing patient orders, ensuring precise and timely
+                  documentation for the treating physician.
+                </p>
+              </div>
+
+              <div className="flex max-w-6xl flex-col items-center gap-3 text-center">
+                <h3 className="text-xl font-semibold text-black">
+                  Tailored Support Services
+                </h3>
+                <p className="text-lg text-black">
+                  We offer flexible assistance for various administrative and
+                  clinical needs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="contact" className="relative z-20 py-20">
+          <h2 className="px-2 text-center text-2xl font-semibold text-[#891C1C]">
+            Work with CardioVirtual Assistance
           </h2>
-
-          <div className="flex flex-col items-center gap-16 px-8">
-            <div className="flex max-w-6xl flex-col items-center gap-3 text-center">
-              <h3 className="text-xl font-semibold text-black">
-                Comprehensive Assistance
-              </h3>
-              <p className="text-lg text-black">
-                We provide support to physicians, cardiologists, and medical
-                institutions to help them achieve better patient outcomes by
-                enhancing their efficiency and focusing on direct patient care.
-              </p>
+          <div className="justiy-center mx-auto mt-16 flex max-w-7xl flex-col items-center gap-20 px-8 sm:flex-row">
+            <div className="w-full max-w-[500px] rounded-lg bg-[#F8F1F1]/70 p-10">
+              <h3 className="text-xl font-medium text-gray-900">Contact Us</h3>
+              <h4 className="pt-1 pb-3 text-2xl font-medium text-gray-900">
+                Get In Touch
+              </h4>
+              <ContactForm
+                sendEmail={async (formData) => {
+                  "use server";
+                  formData.forEach((value, key) => {
+                    console.log(key, value);
+                  });
+                }}
+              />
             </div>
 
-            <div className="flex max-w-6xl flex-col items-center gap-3 text-center">
-              <h3 className="text-xl font-semibold text-black">
-                Medical Virtual Scribe
-              </h3>
-              <p className="text-lg text-black">
-                We assist with preliminary cardiology reporting, accurately
-                documenting medical visits, diagnoses, procedures, and
-                transcribing patient orders, ensuring precise and timely
-                documentation for the treating physician.
-              </p>
-            </div>
+            <div className="flex max-w-xl flex-col rounded-lg bg-[#F8F1F1]/70 p-10 text-rose-950">
+              <div>
+                <span className="font-medium">SCHEDULE A CONSULTATION</span> to
+                discuss your clinic&apos;s needs and discover how we can enhance
+                your operations.
+              </div>
 
-            <div className="flex max-w-6xl flex-col items-center gap-3 text-center">
-              <h3 className="text-xl font-semibold text-black">
-                Tailored Support Services
-              </h3>
-              <p className="text-lg text-black">
-                We offer flexible assistance for various administrative and
-                clinical needs.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="absolute top-20 left-0 w-full overflow-hidden">
-          <Circles className="relative -left-[60%] h-auto w-[2300px]" />
-        </div>
-      </section>
-      <section id="contact" className="relative z-20 py-20">
-        <h2 className="text-center text-2xl font-semibold text-[#891C1C]">
-          Work with CardioVirtual Assistance
-        </h2>
-        <div className="justiy-center mx-auto mt-16 flex max-w-7xl flex-col items-center gap-20 px-8 sm:flex-row">
-          <div className="w-full max-w-[500px] rounded-lg bg-[#F8F1F1]/70 p-10">
-            <h3 className="text-xl font-medium text-gray-900">Contact Us</h3>
-            <h4 className="pt-1 pb-3 text-2xl font-medium text-gray-900">
-              Get In Touch
-            </h4>
-            <ContactForm
-              sendEmail={async (formData) => {
-                "use server";
-                formData.forEach((value, key) => {
-                  console.log(key, value);
-                });
-              }}
-            />
-          </div>
-
-          <div className="flex max-w-xl flex-col rounded-lg bg-[#F8F1F1]/70 p-10 text-rose-950">
-            <div>
-              <span className="font-medium">SCHEDULE A CONSULTATION</span> to
-              discuss your clinic&apos;s needs and discover how we can enhance
-              your operations.
-            </div>
-
-            <div className="flex flex-col">
-              <a
-                href="mailto:contact@cardiovirtual.com"
-                className="flex items-center hover:underline"
-              >
-                <Image src="/email.png" alt="email" width={86} height={86} />
-                <span className="-ml-3">contact@cardiovirtual.com</span>
-              </a>
-              <a
-                href="tel:+5491133333333"
-                className="flex items-center hover:underline"
-              >
-                <Image src="/phone.png" alt="phone" width={86} height={86} />
-                <span className="-ml-3">+54 9 11 3333 3333</span>
-              </a>
-              <a
-                href="https://linkedin.com/company/cardiovirtual"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center hover:underline"
-              >
-                <Image
-                  src="/linkedin.png"
-                  alt="linkedin"
-                  width={86}
-                  height={86}
-                />
-                <span className="-ml-3">@cardiovirtual</span>
-              </a>
+              <div className="flex flex-col">
+                <a
+                  href="mailto:contact@cardiovirtual.com"
+                  className="flex items-center hover:underline"
+                >
+                  <Image src="/email.png" alt="email" width={86} height={86} />
+                  <span className="-ml-3">contact@cardiovirtual.com</span>
+                </a>
+                <a
+                  href="tel:+5491133333333"
+                  className="flex items-center hover:underline"
+                >
+                  <Image src="/phone.png" alt="phone" width={86} height={86} />
+                  <span className="-ml-3">+54 9 11 3333 3333</span>
+                </a>
+                <a
+                  href="https://linkedin.com/company/cardiovirtual"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center hover:underline"
+                >
+                  <Image
+                    src="/linkedin.png"
+                    alt="linkedin"
+                    width={86}
+                    height={86}
+                  />
+                  <span className="-ml-3">@cardiovirtual</span>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
   );
 }
