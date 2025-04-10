@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import Image from "next/image";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "CVA",
@@ -54,6 +55,7 @@ export default function RootLayout({
           </div>
         </nav>
         {children}
+        <Analytics />
         <footer className="z-40 flex items-center bg-white text-rose-900">
           <div className="h-full w-full bg-[#E5D5D5] px-7 py-3">
             <div className="flex items-center justify-between">
