@@ -225,14 +225,7 @@ export default async function Home() {
               <h4 className="pt-1 pb-3 text-2xl font-medium text-gray-900">
                 Get In Touch
               </h4>
-              <ContactForm
-                sendEmail={async (formData) => {
-                  "use server";
-                  formData.forEach((value, key) => {
-                    console.log(key, value);
-                  });
-                }}
-              />
+              <ContactForm />
             </div>
 
             <div className="flex max-w-xl flex-col rounded-lg bg-[#F8F1F1]/70 p-10 text-rose-950">

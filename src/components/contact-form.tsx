@@ -1,12 +1,22 @@
 "use client";
 
-export function ContactForm({
-  sendEmail,
-}: {
-  sendEmail: (formData: FormData) => Promise<void>;
-}) {
+import { sendNewContactEmail } from "@/app/actions/emails";
+import { toast } from "sonner";
+export function ContactForm() {
+  async function handleAction(input: FormData) {
+    const result = await sendNewContactEmail(input);
+    if (result.success) {
+      toast.success("Email sent successfully");
+    } else {
+      toast.error(
+        result.error ??
+          "Something went wrong, please try contacting us via email",
+      );
+    }
+  }
+
   return (
-    <form action={sendEmail} className="flex flex-col gap-4">
+    <form action={handleAction} className="flex flex-col gap-4">
       <div>
         <label htmlFor="name" className="text-gray-900">
           Name

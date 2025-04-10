@@ -3,7 +3,6 @@ import {
   createTRPCRouter,
   publicProcedure,
 } from "@/server/api/trpc";
-
 /**
  * This is the primary router for your server.
  *

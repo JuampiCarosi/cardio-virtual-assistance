@@ -9,6 +9,7 @@ export const env = createEnv({
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
     RESEND_API_KEY: z.string(),
+    VERCEL_URL: z.string(),
   },
 
   /**
@@ -25,6 +26,7 @@ export const env = createEnv({
    * middlewares) or client-side so we need to destruct manually.
    */
   runtimeEnv: {
+    VERCEL_URL: process.env.VERCEL_URL,
     NODE_ENV: process.env.NODE_ENV,
     RESEND_API_KEY: process.env.RESEND_API_KEY,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
