@@ -1,9 +1,16 @@
 "use client";
 
 import { sendNewContactEmail } from "@/app/actions/emails";
+import { useState } from "react";
 import { toast } from "sonner";
+
 export function ContactForm() {
-  async function handleAction(input: FormData) {
+  const [pending, setPending] = useState(false);
+
+  const handleAction = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setPending(true);
+    const input = new FormData(event.currentTarget);
     const result = await sendNewContactEmail(input);
     if (result.success) {
       toast.success("Email sent successfully");
@@ -13,10 +20,19 @@ export function ContactForm() {
           "Something went wrong, please try contacting us via email",
       );
     }
-  }
+    setPending(false);
+    const form = document.getElementById("contact-form") as HTMLFormElement;
+    if (form) {
+      form.reset();
+    }
+  };
 
   return (
-    <form action={handleAction} className="flex flex-col gap-4">
+    <form
+      id="contact-form"
+      onSubmit={handleAction}
+      className="flex flex-col gap-4"
+    >
       <div>
         <label htmlFor="name" className="text-gray-900">
           Name
@@ -66,10 +82,11 @@ export function ContactForm() {
         />
       </div>
       <button
+        disabled={pending}
         type="submit"
-        className="mt-4 rounded-full bg-[#891C1C] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#6d1616]"
+        className="mt-4 rounded-full bg-[#891C1C] px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-[#6d1616] disabled:opacity-50"
       >
-        Send now
+        {pending ? "Sending..." : "Send now"}
       </button>
     </form>
   );
