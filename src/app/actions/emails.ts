@@ -30,7 +30,7 @@ export async function sendNewContactEmail(input: FormData) {
 
   const { error } = await resend.emails.send({
     from: "cva@juampicarosi.com.ar",
-    to: ["juampicarosi@gmail.com"],
+    to: ["juampicarosi@gmail.com", "mateo.iwanowski@gmail.com"],
     subject: validated.subject
       ? `[NUEVO CONTACTO] ${validated.subject}`
       : `[NUEVO CONTACTO]`,
