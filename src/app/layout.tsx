@@ -73,7 +73,7 @@ export default function RootLayout({
                   </Link>
                 </span>
                 <span>
-                  Created by{" "}
+                  Built by{" "}
                   <Link
                     className="underline"
                     href="https://www.linkedin.com/in/juan-pablo-carosi-warburg-43667529b/"
